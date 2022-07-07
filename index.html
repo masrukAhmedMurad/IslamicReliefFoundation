@@ -27,6 +27,7 @@
 
         table{
             font-size: 10px;
+           
         }
 
         table, td{
@@ -36,7 +37,7 @@
 
         td{
             height: 35px;
-            width: 56px;
+           
             padding-left: 3px;
         }
 
@@ -51,16 +52,39 @@
 
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-column-gap: 10px;
+            grid-column-gap: 6px;
             grid-row-gap: 25px;
         }
 
 
+td{
+    width: auto;
+    max-width: 90px;
+}
+
+#fc{
+    width: 100px;
+    max-width: 100px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.ltext{
+    font-size: 14px;
+}
+
+.mtext{
+    font-size: 12px;
+}
 
 
-
-
-
+td{
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+}
 
 
     </style>
@@ -71,44 +95,44 @@
 
     <div class="distribution-cards">
 
-        <div class="card">    
+        <div class="card bold">    
 <table>
 
     <tr>
-        <td colspan="6" class="tcen">Islamic Relief Bangladesh</td>
+        <td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td>
     </tr>
-         <td colspan="6"  class="tcen">Qurbani Programme 2022</td>
+         <td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td>
     <tr>
-        <td colspan="6"  class="tcen">Distribution Card</td>
+        <td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td>
     </tr>
 
     <tr>
-        <td>Date of Distribution</td>
+        <td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td>
         <td colspan="2" id="date" ></td>
-        <td>Place of Distribution</td>
+        <td>Place of Distribution<br>[বিতরণের স্থান]</td>
         <td colspan="2" id="place"></td>
     </tr>
     <tr>
-        <td>Participant Number</td>
+        <td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td>
         <td colspan="5" id="number"></td>
     </tr>
 
     
     <tr>
-        <td>Participant's Name</td>
+        <td>Participant's Name<br>[অংশগ্রহনকারীর নাম]</td>
         <td colspan="2" id="name"></td>
-        <td>Father/Husband /Guardian’s Name</td>
+        <td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td>
         <td colspan="2" id="gardian"></td>
     </tr>
 
     <tr>
 
-        <td rowspan="2">Participant's Address</td>
-        <td>District</td>
-        <td>Upazilla</td>
-        <td>Union</td>
-        <td>Ward</td>
-        <td >Village</td>
+        <td rowspan="2">Participant's Address<br>[অংশগ্রহনকারীর ঠিকানা]</td>
+        <td>District[জেলা]</td>
+        <td>Upazilla[উপজেলা]</td>
+        <td>Union[ইউনিয়ন]</td>
+        <td>Ward[ওয়ার্ড]</td>
+        <td >Village[গ্রাম]</td>
     </tr>
 
     <tr>
@@ -121,34 +145,492 @@
     </tr>
 
     <tr>
-        <td colspan="3">Content and Quantity</td>
-        <td colspan="3"  class="tcen">Beef 2 kilogram</td>
+        <td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td>
+        <td colspan="3"  class="tcen">গরুর মাংস ২ কেজি</td>
     
     </tr>
 
     <tr>
-        <td>Token distributed by</td>
+        <td>Token distributed by [টোকেন বিতরণ করেছেন]</td>
         <td colspan="2" id="distributer"></td>
-        <td>Designation</td>
+        <td>Designation [উপাধি]</td>
         <td colspan="2" id="designation"></td>
     </tr>
 
     <tr>
-        <td  class="tcen">Signature</td>
+        <td  class="tcen">Signature [স্বাক্ষর]</td>
         <td colspan="5" ></td>
     </tr>
     <tr>
         <td colspan="6"  class="tcen">
-            For any suggestion / complaint : 01777773701, <br>feedback@islamicrelief-bd.org
+            For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org
     </td>
 </tr>
 
 </table>
         </div>
 
-
+        <div class="card bold">    
+            <table>
+            
+                <tr>
+                    <td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td>
+                </tr>
+                     <td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td>
+                <tr>
+                    <td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td>
+                </tr>
+            
+                <tr>
+                    <td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td>
+                    <td colspan="2" id="date" ></td>
+                    <td>Place of Distribution<br>[বিতরণের স্থান]</td>
+                    <td colspan="2" id="place"></td>
+                </tr>
+                <tr>
+                    <td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td>
+                    <td colspan="5" id="number"></td>
+                </tr>
+            
+                
+                <tr>
+                    <td>Participant's Name<br>[অংশগ্রহনকারীর নাম]</td>
+                    <td colspan="2" id="name"></td>
+                    <td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td>
+                    <td colspan="2" id="gardian"><p>yyyyydghf6usdytdcyicitdfiytdcicfyftd</p></td>
+                </tr>
+            
+                <tr>
+            
+                    <td rowspan="2">Participant's Address<br>[অংশগ্রহনকারীর ঠিকানা]</td>
+                    <td>District[জেলা]</td>
+                    <td>Upazilla[উপজেলা]</td>
+                    <td>Union[ইউনিয়ন]</td>
+                    <td>Ward[ওয়ার্ড]</td>
+                    <td >Village[গ্রাম]</td>
+                </tr>
+            
+                <tr>
+            <td id="district"></td>
+            <td id="upazilla"></td>
+            <td id="union"></td>
+            <td id="ward"></td>
+            <td id="village"></td>
+            
+                </tr>
+            
+                <tr>
+                    <td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td>
+                    <td colspan="3"  class="tcen">গরুর মাংস ২ কেজি</td>
+                
+                </tr>
+            
+                <tr>
+                    <td>Token distributed by [টোকেন বিতরণ করেছেন]</td>
+                    <td colspan="2" id="distributer"></td>
+                    <td>Designation [উপাধি]</td>
+                    <td colspan="2" id="designation"></td>
+                </tr>
+            
+                <tr>
+                    <td  class="tcen">Signature [স্বাক্ষর]</td>
+                    <td colspan="5" ></td>
+                </tr>
+                <tr>
+                    <td colspan="6"  class="tcen">
+                        For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org
+                </td>
+            </tr>
+            
+            </table>
+                    </div>
                  
+       
+                    
+                    <div class="card bold">    
+                        <table>
+                        
+                            <tr>
+                                <td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td>
+                            </tr>
+                                 <td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td>
+                            <tr>
+                                <td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td>
+                            </tr>
+                        
+                            <tr>
+                                <td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td>
+                                <td colspan="2" id="date" ></td>
+                                <td>Place of Distribution<br>[বিতরণের স্থান]</td>
+                                <td colspan="2" id="place"></td>
+                            </tr>
+                            <tr>
+                                <td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td>
+                                <td colspan="5" id="number"></td>
+                            </tr>
+                        
+                            
+                            <tr>
+                                <td>Participant's Name<br>[অংশগ্রহনকারীর নাম]</td>
+                                <td colspan="2" id="name"></td>
+                                <td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td>
+                                <td colspan="2" id="gardian"></td>
+                            </tr>
+                        
+                            <tr>
+                        
+                                <td rowspan="2">Participant's Address<br>[অংশগ্রহনকারীর ঠিকানা]</td>
+                                <td>District[জেলা]</td>
+                                <td>Upazilla[উপজেলা]</td>
+                                <td>Union[ইউনিয়ন]</td>
+                                <td>Ward[ওয়ার্ড]</td>
+                                <td >Village[গ্রাম]</td>
+                            </tr>
+                        
+                            <tr>
+                        <td id="district"></td>
+                        <td id="upazilla"></td>
+                        <td id="union"></td>
+                        <td id="ward"></td>
+                        <td id="village"></td>
+                        
+                            </tr>
+                        
+                            <tr>
+                                <td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td>
+                                <td colspan="3"  class="tcen">গরুর মাংস ২ কেজি</td>
+                            
+                            </tr>
+                        
+                            <tr>
+                                <td>Token distributed by [টোকেন বিতরণ করেছেন]</td>
+                                <td colspan="2" id="distributer"></td>
+                                <td>Designation [উপাধি]</td>
+                                <td colspan="2" id="designation"></td>
+                            </tr>
+                        
+                            <tr>
+                                <td  class="tcen">Signature [স্বাক্ষর]</td>
+                                <td colspan="5" ></td>
+                            </tr>
+                            <tr>
+                                <td colspan="6"  class="tcen">
+                                    For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org
+                            </td>
+                        </tr>
+                        
+                        </table>
+                                </div>
+
+
+
+
+                                <div class="card bold">    
+                                    <table>
                                     
+                                        <tr>
+                                            <td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td>
+                                        </tr>
+                                             <td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td>
+                                        <tr>
+                                            <td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td>
+                                            <td colspan="2" id="date" ></td>
+                                            <td>Place of Distribution<br>[বিতরণের স্থান]</td>
+                                            <td colspan="2" id="place"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td>
+                                            <td colspan="5" id="number"></td>
+                                        </tr>
+                                    
+                                        
+                                        <tr>
+                                            <td>Participant's Name<br>[অংশগ্রহনকারীর নাম]</td>
+                                            <td colspan="2" id="name"></td>
+                                            <td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td>
+                                            <td colspan="2" id="gardian"></td>
+                                        </tr>
+                                    
+                                        <tr>
+                                    
+                                            <td rowspan="2">Participant's Address<br>[অংশগ্রহনকারীর ঠিকানা]</td>
+                                            <td>District[জেলা]</td>
+                                            <td>Upazilla[উপজেলা]</td>
+                                            <td>Union[ইউনিয়ন]</td>
+                                            <td>Ward[ওয়ার্ড]</td>
+                                            <td >Village[গ্রাম]</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                    <td id="district"></td>
+                                    <td id="upazilla"></td>
+                                    <td id="union"></td>
+                                    <td id="ward"></td>
+                                    <td id="village"></td>
+                                    
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td>
+                                            <td colspan="3"  class="tcen">গরুর মাংস ২ কেজি</td>
+                                        
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>Token distributed by [টোকেন বিতরণ করেছেন]</td>
+                                            <td colspan="2" id="distributer"></td>
+                                            <td>Designation [উপাধি]</td>
+                                            <td colspan="2" id="designation"></td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td  class="tcen">Signature [স্বাক্ষর]</td>
+                                            <td colspan="5" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6"  class="tcen">
+                                                For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org
+                                        </td>
+                                    </tr>
+                                    
+                                    </table>
+                                            </div>
+
+
+                                            <div class="card bold">    
+                                                <table>
+                                                
+                                                    <tr>
+                                                        <td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td>
+                                                    </tr>
+                                                         <td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td>
+                                                    <tr>
+                                                        <td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td>
+                                                        <td colspan="2" id="date" ></td>
+                                                        <td>Place of Distribution<br>[বিতরণের স্থান]</td>
+                                                        <td colspan="2" id="place"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td>
+                                                        <td colspan="5" id="number"></td>
+                                                    </tr>
+                                                
+                                                    
+                                                    <tr>
+                                                        <td>Participant's Name<br>[অংশগ্রহনকারীর নাম]</td>
+                                                        <td colspan="2" id="name"></td>
+                                                        <td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td>
+                                                        <td colspan="2" id="gardian"><p>yyyyydghf6usdytdcyicitdfiytdcicfyftd</p></td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                
+                                                        <td rowspan="2">Participant's Address<br>[অংশগ্রহনকারীর ঠিকানা]</td>
+                                                        <td>District[জেলা]</td>
+                                                        <td>Upazilla[উপজেলা]</td>
+                                                        <td>Union[ইউনিয়ন]</td>
+                                                        <td>Ward[ওয়ার্ড]</td>
+                                                        <td >Village[গ্রাম]</td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                <td id="district"></td>
+                                                <td id="upazilla"></td>
+                                                <td id="union"></td>
+                                                <td id="ward"></td>
+                                                <td id="village"></td>
+                                                
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td>
+                                                        <td colspan="3"  class="tcen">গরুর মাংস ২ কেজি</td>
+                                                    
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>Token distributed by [টোকেন বিতরণ করেছেন]</td>
+                                                        <td colspan="2" id="distributer"></td>
+                                                        <td>Designation [উপাধি]</td>
+                                                        <td colspan="2" id="designation"></td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td  class="tcen">Signature [স্বাক্ষর]</td>
+                                                        <td colspan="5" ></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="6"  class="tcen">
+                                                            For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org
+                                                    </td>
+                                                </tr>
+                                                
+                                                </table>
+                                                        </div>
+                                                     
+                                           
+                                                        
+                                                        <div class="card bold">    
+                                                            <table>
+                                                            
+                                                                <tr>
+                                                                    <td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td>
+                                                                </tr>
+                                                                     <td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td>
+                                                                <tr>
+                                                                    <td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td>
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    <td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td>
+                                                                    <td colspan="2" id="date" ></td>
+                                                                    <td>Place of Distribution<br>[বিতরণের স্থান]</td>
+                                                                    <td colspan="2" id="place"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td>
+                                                                    <td colspan="5" id="number"></td>
+                                                                </tr>
+                                                            
+                                                                
+                                                                <tr>
+                                                                    <td>Participant's Name<br>[অংশগ্রহনকারীর নাম]</td>
+                                                                    <td colspan="2" id="name"></td>
+                                                                    <td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td>
+                                                                    <td colspan="2" id="gardian"></td>
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                            
+                                                                    <td rowspan="2">Participant's Address<br>[অংশগ্রহনকারীর ঠিকানা]</td>
+                                                                    <td>District[জেলা]</td>
+                                                                    <td>Upazilla[উপজেলা]</td>
+                                                                    <td>Union[ইউনিয়ন]</td>
+                                                                    <td>Ward[ওয়ার্ড]</td>
+                                                                    <td >Village[গ্রাম]</td>
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                            <td id="district"></td>
+                                                            <td id="upazilla"></td>
+                                                            <td id="union"></td>
+                                                            <td id="ward"></td>
+                                                            <td id="village"></td>
+                                                            
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    <td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td>
+                                                                    <td colspan="3"  class="tcen">গরুর মাংস ২ কেজি</td>
+                                                                
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    <td>Token distributed by [টোকেন বিতরণ করেছেন]</td>
+                                                                    <td colspan="2" id="distributer"></td>
+                                                                    <td>Designation [উপাধি]</td>
+                                                                    <td colspan="2" id="designation"></td>
+                                                                </tr>
+                                                            
+                                                                <tr>
+                                                                    <td  class="tcen">Signature [স্বাক্ষর]</td>
+                                                                    <td colspan="5" ></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="6"  class="tcen">
+                                                                        For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org
+                                                                </td>
+                                                            </tr>
+                                                            
+                                                            </table>
+                                                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                                                    <div class="card bold">    
+                                                                        <table>
+                                                                        
+                                                                            <tr>
+                                                                                <td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td>
+                                                                            </tr>
+                                                                                 <td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td>
+                                                                            <tr>
+                                                                                <td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td>
+                                                                            </tr>
+                                                                        
+                                                                            <tr>
+                                                                                <td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td>
+                                                                                <td colspan="2" id="date" ></td>
+                                                                                <td>Place of Distribution<br>[বিতরণের স্থান]</td>
+                                                                                <td colspan="2" id="place"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td>
+                                                                                <td colspan="5" id="number"></td>
+                                                                            </tr>
+                                                                        
+                                                                            
+                                                                            <tr>
+                                                                                <td>Participant's Name<br>[অংশগ্রহনকারীর নাম]</td>
+                                                                                <td colspan="2" id="name"></td>
+                                                                                <td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td>
+                                                                                <td colspan="2" id="gardian"></td>
+                                                                            </tr>
+                                                                        
+                                                                            <tr>
+                                                                        
+                                                                                <td rowspan="2">Participant's Address<br>[অংশগ্রহনকারীর ঠিকানা]</td>
+                                                                                <td>District[জেলা]</td>
+                                                                                <td>Upazilla[উপজেলা]</td>
+                                                                                <td>Union[ইউনিয়ন]</td>
+                                                                                <td>Ward[ওয়ার্ড]</td>
+                                                                                <td >Village[গ্রাম]</td>
+                                                                            </tr>
+                                                                        
+                                                                            <tr>
+                                                                        <td id="district"></td>
+                                                                        <td id="upazilla"></td>
+                                                                        <td id="union"></td>
+                                                                        <td id="ward"></td>
+                                                                        <td id="village"></td>
+                                                                        
+                                                                            </tr>
+                                                                        
+                                                                            <tr>
+                                                                                <td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td>
+                                                                                <td colspan="3"  class="tcen">গরুর মাংস ২ কেজি</td>
+                                                                            
+                                                                            </tr>
+                                                                        
+                                                                            <tr>
+                                                                                <td>Token distributed by [টোকেন বিতরণ করেছেন]</td>
+                                                                                <td colspan="2" id="distributer"></td>
+                                                                                <td>Designation [উপাধি]</td>
+                                                                                <td colspan="2" id="designation"></td>
+                                                                            </tr>
+                                                                        
+                                                                            <tr>
+                                                                                <td  class="tcen">Signature [স্বাক্ষর]</td>
+                                                                                <td colspan="5" ></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="6"  class="tcen">
+                                                                                    For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org
+                                                                            </td>
+                                                                        </tr>
+                                                                        
+                                                                        </table>
+                                                                                </div>
+
 
     </div>
 

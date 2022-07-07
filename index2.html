@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+	<meta charset="utf-8" />
+	<title>Convert Excel to HTML Table using JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/4c874bae29.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+
+    }
+
+
+
+
+    *{
+        margin: 5px;
+        padding: 0;
+    }
+
+    table{
+        font-size: 10px;
+        width: 98%;
+       
+    }
+
+    table, td{
+        border: 2px solid grey;
+        border-collapse: collapse;
+    }
+
+    td{
+        height: 35px;
+       
+        padding-left: 3px;
+    }
+
+
+    .tcen{
+        text-align: center;
+    }
+
+
+
+
+
+   .distribution-cards .card{
+
+        width: 48%;
+        display: inline-block;
+
+   }
+    
+
+  
+
+
+    @media print {
+       #head{
+            display: none !important;
+        }
+
+        #distribution-cards{
+
+            margin-top: 0px !important;
+
+        }
+
+        .break-page {
+            page-break-after: always;
+        }
+
+        
+    }
+
+
+
+td{
+width: auto;
+max-width: 80px;
+}
+
+#fc{
+width: 88px;
+max-width: 100px;
+}
+
+.bold{
+font-weight: bold;
+}
+
+.ltext{
+font-size: 14px;
+}
+
+.mtext{
+font-size: 12px;
+}
+
+
+td{
+word-wrap: break-word;
+margin: 0;
+padding: 0;
+padding-left: 2px;
+}
+
+
+
+#number{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#ward{
+    font-size:12px ;
+    font-weight: 700;
+    text-align: center;
+}
+
+#name{
+    font-size: 12px;
+    word-wrap: break-word;
+    font-weight: 700;
+}
+
+#gardian{
+    font-size: 12px;
+    word-wrap: break-word;
+    font-weight: 700;
+
+}
+
+#upz{
+    font-size: 8px;
+}
+
+
+label{
+   width: 150px;
+   font-size: 15px;
+   font-weight: bold;
+
+}
+.card-header{
+border-bottom: 5px solid white;
+color: white !important ;
+
+}
+
+
+
+</style>
+
+</head>
+<body class="bg-info bg-gradient">
+    
+    <div class="container " id="head">
+    	<h2 class="text-center mt-4 mb-5 text-white">Creating Distribution List From Excel File</h2>
+    	<div class="card mt-5">
+    		<div class="card-header bg-primary"><b>Fill The Input Fields Carefully...</b></div>
+    		<div class="card-body bg-warning ">
+    			<label for="district">District : </label>
+                <input type="text" id="district"><br>
+                <label for="upazila">Upazila : </label>
+                <input type="text" name="" id="upazila"><br>
+                <label for="union">Union : </label>
+                <input type="text" name="" id="union"><br>
+                <label for="uniqueId">Unique Id : </label>
+                <input type="text" id="uniqueId"><br>
+                <label for="excel_file">Excel File : </label>
+                <input type="file" id="excel_file" />
+               
+
+    		</div>
+            <div class="card-header bg-primary"><b>Wait a while after selecting...</b></div>
+
+    	</div>
+        
+    </div>
+
+    <div id="distribution-cards" class="mt-5 container distribution-cards"></div>
+
+</body>
+</html>
+
+<script>
+
+const excel_file = document.getElementById('excel_file');
+const district = document.getElementById('district');
+const upazila = document.getElementById('upazila');
+const union = document.getElementById('union');
+var unid = document.getElementById('uniqueId');
+
+
+
+excel_file.addEventListener('change', (event) =>{
+    
+    if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
+{
+    document.getElementById('distribution-cards').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+
+    excel_file.value = '';
+
+    return false;
+}
+
+
+
+
+
+
+    var reader = new FileReader();
+
+    reader.readAsArrayBuffer(event.target.files[0]);
+
+    reader.onload = function(event){
+
+        var data = new Uint8Array(reader.result);
+
+        var work_book = XLSX.read(data, {type:'array'});
+
+        var sheet_name = work_book.SheetNames;
+
+        var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1});
+
+        if(sheet_data.length > 0)
+        {
+            var table_output = '';
+
+            for(var row = 1; row < sheet_data.length; row++)
+            {
+
+              
+
+
+                table_output+='<div class="card bold"><table><tr><td colspan="6" class="tcen ltext">Islamic Relief Bangladesh [ইসলামিক রিলিফ বাংলাদেশ]</td></tr><td colspan="6"  class="tcen mtext">Qurbani Programme 2022 [কোরবানি কর্মসূচি ২০২২]</td><tr><td colspan="6"  class="tcen mtext">Distribution Card [বিতরণ কার্ড] </td></tr><tr><td id="fc">Date of Distribution<br>[বিতরণের তারিখ]</td><td colspan="2" id="date" ></td><td>Place of Distribution<br>[বিতরণের স্থান]</td><td colspan="2" id="place"></td></tr><tr><td>Participant Number<br>[অংশগ্রহনকারী নম্বর]</td><td colspan="5" id="number">'+sheet_data[row][1]+'</td></tr><tr><td>Participant\'s Name<br>[অংশগ্রহনকারীর নাম]</td><td colspan="2" id="name">'+sheet_data[row][2]+'</td><td>Father/Husband /Guardian’s Name<br>[পিতা/স্বামী/অবিভাবকের নাম]</td><td colspan="2" id="gardian">'+sheet_data[row][3]+'</td></tr><tr><td rowspan="2">Participant\'s Address<br>[অংশগ্রহনকারীর ঠিকানা]</td><td>District[জেলা]</td><td id="upz">Upazilla[উপজেলা]</td><td>Union[ইউনিয়ন]</td><td>Ward[ওয়ার্ড]</td><td >Village[গ্রাম]</td></tr><tr><td id="district">'+district.value+'</td><td id="upazilla">'+upazila.value+'</td><td id="union">'+union.value+'</td><td id="ward">'+sheet_data[row][6]+'</td><td id="village">'+sheet_data[row][7]+'</td></tr><tr><td colspan="3">Content and Quantity [বিষয়বস্তু এবং পরিমাণ]</td><td colspan="3"  class="tcen">গরুর মাংস (<i class="fa-solid fa-plus-minus"></i>২ কেজি)</td></tr><tr><td>Token distributed by [টোকেন বিতরণ করেছেন]</td> <td colspan="2" id="distributer"></td><td>Designation [উপাধি]</td><td colspan="2" id="designation"></td></tr><tr><td  class="tcen">Signature [স্বাক্ষর]</td><td colspan="5" ></td></tr><tr><td colspan="6"  class="tcen">For any suggestion / complaint (যেকোনো পরামর্শের জন্য / অভিযোগ) : 01777773701. <br>feedback@islamicrelief-bd.org</td></tr></table></div>';
+            }
+            document.getElementById('distribution-cards').innerHTML = table_output;
+        }
+
+        excel_file.value = '';
+
+    }
+
+});
+
+</script>
